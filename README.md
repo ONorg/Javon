@@ -178,6 +178,7 @@ class Name<T, V>: Class, Interface1, StringList{
 			<10: 10;
 			>10 & <100: 100;
 			10<len<100: 100;
+			10..100: 100;
 			default: 20;
 		}
 		c = state()? {
