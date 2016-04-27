@@ -1,7 +1,7 @@
 # Javon
 Next generation language for JVM based ON
 
-*Candidate name: alang? a lang, A-Lang or C(DEF[F#bG]GHI)J bG-lang Big-Lang?
+*Candidate names: alang? a lang, A-Lang or C(DEF[F#bG]GHI)J bG-lang Big-Lang?
 
 
 #Sample
