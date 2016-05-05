@@ -14,7 +14,7 @@
             (nest expression group)
             <br>Brackets (array subscript)<br>Member selection via object name
             <br>Cast (convert value to temporary value of <i>type</i>)
-            <br>check target and then do selecting or converting
+            <br>conditional selecting or converting
             <br>Postfix increment/decrement</font></td>
           <td valign="top">
             <p align="center"><font size="2">left-to-right</font></p></td></tr>
