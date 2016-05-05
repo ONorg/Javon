@@ -25,10 +25,6 @@
           </font></td>
           <td align="center" valign="top"><font size="2">right-to-left</font></td></tr>
         <tr>
-          <td align="center"><font size="2">,<br>..</font></td>
-          <td><font size="2">Separator for element of array<br>range(e.g. 1..100)</font></td>
-          <td align="center" valign="top"><font size="2">left-to-right</font></td></tr>
-        <tr>
           <td align="center"><font size="2">* &nbsp;/&nbsp; %</font></td>
           <td><font size="2">Multiplication/division/modulus</font></td>
           <td align="center" valign="top"><font size="2">left-to-right</font></td></tr>
@@ -71,6 +67,10 @@
         <tr>
           <td align="center"><font size="2">| |</font></td>
           <td><font size="2">Logical OR</font></td>
+          <td align="center" valign="top"><font size="2">left-to-right</font></td></tr>
+        <tr>
+          <td align="center"><font size="2">,<br>..</font></td>
+          <td><font size="2">Separator for element of array<br>range(e.g. 1..100)</font></td>
           <td align="center" valign="top"><font size="2">left-to-right</font></td></tr>
         <tr>
           <td align="center"><font size="2">? :<br>@?:</font></td>
