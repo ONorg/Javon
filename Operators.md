@@ -33,9 +33,8 @@
           <td><font size="2">Addition/subtraction</font></td>
           <td align="center" valign="top"><font size="2">left-to-right</font></td></tr>
         <tr>
-          <td align="center"><font size="2">&lt;&lt;&nbsp; &gt;&gt;</font></td>
-          <td><font size="2">Bitwise shift left, Bitwise 
-            shift right</font></td>
+          <td align="center"><font size="2">&lt;&lt;&nbsp; &gt;&gt; &nbsp; &gt;&gt;&gt;</font></td>
+          <td><font size="2">Bitwise shift left, Bitwise shift right, Bitwise unsigned shift right</font></td>
           <td align="center" valign="top"><font size="2">left-to-right</font></td></tr>
         <tr>
           <td align="center"><font size="2">&lt;&nbsp; &lt;=<br>&gt;&nbsp; &gt;=</font></td>
