@@ -107,6 +107,52 @@ array2 = @list? s, i: s+i; //result is big1, middle2, small3
 }
 ```
 ##Statement
-### Assignment
+Block, Assignment, Method invocation, Conditional and Loop, and other control statements.
+### Conditional and Loop statement
 ```java
+boolean expression? stmt1: stmt2;
+boolean expression? stmt1: b2? stmt2: stmt3 //the ternary statement can be nested
+//enumerable switch
+enumValue? {
+	e1: stmt1
+	e2: stmt2
+	...
+}
+countable? {
+	1: stmt1
+	2..10: stmt2
+	>400: stmt3
+	<=100: stmt4
+}
+//LOOP
+@boolean expression? statement
+@range/enumerable/collectin? value-var, index-var, increment expression: statement;
+```
+example
+```java
+int number = 100;
+Object var;
+number % 2 == 1? var = odd :  var= even
+number > 50? var = BIG: number>10? var = MIDDLE: var = SMALL
+number? {
+	>50: var = BIG
+	>10: var = MIDDLE
+	*: var = SMALL
+}
+number? {
+	1: var = ONE
+	2: var = TWO
+	3..50: var = MIDDLE
+	50..*: var = BIG
+}
+int flag;
+visibility? {
+	PUBLIC: flag = 0x0001
+	INTERNAL: flag = 0x0010
+	PROTECTED: flag = 0x0100
+}
+ @1..10? print(i);
+@array? d: print(d*d);
+List<String> list = big, middle, small;
+array2 = @list? s, i: print(s+i); //print: big1 middle2 small3
 ```
