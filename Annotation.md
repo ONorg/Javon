@@ -41,10 +41,22 @@ Of course, the quoted char is not necessary, and the .class suffix must be ignor
 ```java
 @Schedule(dayOfMonth="last") @Schedule(dayOfWeek="Fri", hour="23") 
 @Alert(role="Manager") @Alert(role="Administrator", exception=RuntimeException.class) 
+@Author(
+   name = "Benjamin Franklin",
+   date = "3/27/2003"
+)
+@SuppressWarnings(value = "unchecked")
+@SuppressWarnings("unchecked")
+@SuppressWarnings({"unchecked", "rawtypes"})
+
 ```
 
 ###Javon Version
 ```java
 @Schedule(dayOfMonth=last)(dayOfWeek=Fri; hour=23) 
 @Alert(role: Manager)(role: Administrator; exception: RuntimeException)
+@Author(name: Benjamin Franklin; date: 3/27/2003)
+@SuppressWarning(value: unchecked)
+@SuppressWarning(unchecked)
+@SuppressWarning(unchecked, rawtypes)
 ```
