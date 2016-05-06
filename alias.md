@@ -18,3 +18,8 @@ NNString: @NonNull String
 intfunction: int(string, int)
 string: String
 ```
+
+##About wildcards in Java
+JLS provides a syntax for in and out generics because JVM generics defect, ? super T, ? extends T. This form just take onshot semantics, and then it is no any difference from normal Container<T>. So it should be viewed as an invalidity, someone knows which is very prevalent in C++ design philosophy.
+
+Hence, in Javon, there is no wildcard, wildcard is invalidity, so there is no invalidity in Javon :---)
