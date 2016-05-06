@@ -1,9 +1,11 @@
 #Javon Expression and Statement
 
-##Variable
+##Variable and Assignment
 ```java
 type var = expression;
 var = expression; //type inference
+(a, b) = value1, value2; //tuple
+t (int a, int b);
 ```
 example
 ```java
@@ -41,24 +43,60 @@ int first=22; //var
 "mixed string is NO_${first}_$number" //compacted var reference, the result string is 
 "mixed string is NO_22_333"
 ```
-###Arithm Expression
+###Evaluation Expression
+operators: (expression.md)
+++ -- + - ! ~ * / % >> << >>> < <= > >= == != & ^ | && || 
 ```java
-int number=222; 
-number++
-number--
-++number
---number
-+ - * / % 
 number+3-100 * 9 /20 
 3a +3 b + Long.valueOf("1e10") //in constant multipitive case, the * char can be ignored, the equivelent is 
 3 * a + 3*b + Long.valueOf("1e100")
-
+number == 33 && string.charAt(0)==A || number>>3>=2
 ```
-###Logical Expression
+###Conditional and Loop Expression
 ```java
-Operators: == != && || 
-number == 33 && string.charAt(0)==A || 
-
+boolean expression? exp1: exp2
+b1? exp1: b2? exp2: exp3 //the ternary expression can be nested
+//enumerable switch
+enumValue? {
+	e1: exp1
+	e2: exp2
+	...
+}
+countable? {
+	1: exp1
+	2..10: exp2
+	>400: exp3
+	<=100: exp4
+}
+//LOOP
+@boolean expression? expression
+@range/enumerable/collectin? value-var, index-var, increment expression: expression;
+```
+example
+```java
+int number = 100;
+number % 2 == 1? odd : even
+number > 50? BIG: number>10? MIDDLE: SMALL
+number? {
+	>50: BIG
+	>10: MIDDLE
+	*: SMALL
+}
+number? {
+	1: ONE
+	2: TWO
+	3..50: MIDDLE
+	50..*: BIG
+}
+visibility? {
+	PUBLIC: 0x0001
+	INTERNAL: 0x0010
+	PROTECTED: 0x0100
+}
+array = @1..10? i;
+@array? d: d*d;
+List<String> list = big, middle, small;
+array2 = @list? s, i: s+i; //result is big1, middle2, small3
 ```
 ## Block
 ```java
@@ -71,7 +109,4 @@ number == 33 && string.charAt(0)==A ||
 ##Statement
 ### Assignment
 ```java
-var = expression;
-(a, b) = value1, value2; //tuple
-t (int a, int b);
 ```
