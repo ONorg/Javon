@@ -2,8 +2,9 @@
 
 ```java
 import package.ClassName alias, ClassName alias...
-import package.
-import package.ClassName*StaticField staticMethod
+import package. //same as java import pakcage.*
+import package.ClassName#StaticField  //same as java import static
+import package.ClassName#staticMethod //same as java import static
 import {
   package.ClassName alias, ClassName alias
   ...
@@ -14,8 +15,8 @@ import {
 import java.util.concurrent.CurrentHashMap CHMap, CurrentLinkedDeque deque
 
 import {
-  java.util.
-  java.lang.String*valueOf
-  java.lang.Long*
+  java.util. //find all in java.util package
+  java.lang.String#valueOf //import static String.valueOf
+  java.lang.Long# //import static Long.*
 }
 ```
