@@ -102,3 +102,31 @@ class B<T>: Inner{
   String name;
  }
 ```
+##Initor(Instance Initialization method)
+```java
+class Name..{
+  Type1 field1;
+  Type2 field2;
+  @init: field1, field2; //there is no need to duplicate field assignment statement
+  
+  init(args...){
+    @init: value1, value2...;
+  }
+}
+```
+example
+```java
+class Example{
+  String name;
+  int count;
+  @init: name, count;
+  
+  init(String name, int a, b, c){
+    @init: name, a+b/c;
+  }
+  init(String name1, String name2, int a, b, c){
+    @init: name1+name2, a+b/c;
+  }
+  
+}
+```
