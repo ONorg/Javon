@@ -72,8 +72,13 @@
           <td><font size="2">Separator for element of array<br>range(e.g. 1..100)</font></td>
           <td align="center" valign="top"><font size="2">left-to-right</font></td></tr>
         <tr>
-          <td align="center"><font size="2">? :<br>@?:</font></td>
-          <td><font size="2">Single/Ternary/Switch conditional<br>loop</font></td>
+          <td align="center"><font size="2">? :<br>?! : <br>@?: :<br>@?! : :</font></td>
+          <td><font size="2">
+          Single/Ternary/Switch conditional
+          <br>same as above, simplify the !() case
+          <br>loop
+          <br>same as above, simplify the !() case
+          </font></td>
           <td align="center" valign="top"><font size="2">right-to-left</font></td></tr>
         <tr>
           <td align="center"><font size="2">=<br>+= &nbsp;-=<br>*=&nbsp; /=<br>%=&nbsp; 
