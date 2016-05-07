@@ -73,12 +73,15 @@ int getSetting(String key, int default=3){
 ```
 ##Lambda field
 ```java
+name = arg1, arg2, arg3: expression/statement/block;
+name = (): expression/statement/block;
 FunctionalInterfaceType name = arg1, arg2, arg3: expression/statement/block;
 FunctionalInterfaceType name = (): expression/statement/block;
+nest = args,...: args, ...: expression/statement/block;
 ```
 example
 ```java
-Runnable r = (): doSomething;
+Runnable r = (): doSomething();
 Function<Integer> f = x: x+3;
 BiFunction<Integer,Integer> f = x,y: x+y^2;
 Function<Integer> f = x {
@@ -86,4 +89,5 @@ Function<Integer> f = x {
 	convert(x);
 	return x+3;
 }
+l= x: y: z: x+y+z;
 ```
