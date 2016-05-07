@@ -18,6 +18,7 @@ count = 3; //type inference
 constant //constant value
 var //variable reference
 method(...) //invocatin with return value
+object.method(...) //invocation
 ```
 example
 ```java
@@ -52,6 +53,23 @@ number+3-100 * 9 /20
 3 * a + 3*b + Long.valueOf("1e100")
 number == 33 && string.charAt(0)==A || number>>3>=2
 ```
+###Optional and Converting Expression
+```java
+expression#type //force type cast, higher priority
+expression?#type  //only if type matched do cast
+expression?.member //only if type NonNull do invocation
+```
+example
+```java
+long x = 100;
+int y = x#int;
+Object x = Person(who)
+Object y = x;
+Person p = y#Person;
+Person q = y?#Person; //if y is not an instance of Person, the q has no value.
+q = y?#Person; //ERROR, constant must have a value.
+String name = y?#Person.name?#String;
+```
 ###Conditional and Loop Expression
 ```java
 boolean expression? exp1: exp2
@@ -60,13 +78,14 @@ b1? exp1: b2? exp2: exp3 //the ternary expression can be nested
 enumValue? {
 	e1: exp1
 	e2: exp2
+	e3, e4: exp3
 	...
 }
 countable? {
-	1: exp1
-	2..10: exp2
-	>400: exp3
-	<=100: exp4
+	v1: exp1
+	v2..v3: exp2
+	boolean expression: exp3
+	boolean expression: exp4
 }
 //LOOP
 @boolean expression? expression
@@ -116,13 +135,14 @@ boolean expression? stmt1: b2? stmt2: stmt3 //the ternary statement can be neste
 enumValue? {
 	e1: stmt1
 	e2: stmt2
+	e3, e4: stmt3
 	...
 }
 countable? {
-	1: stmt1
-	2..10: stmt2
-	>400: stmt3
-	<=100: stmt4
+	v1: stmt1
+	v2..v3: stmt2
+	boolean expression: stmt3
+	boolean expression: stmt4
 }
 //LOOP
 @boolean expression? statement
@@ -139,6 +159,12 @@ number? {
 	>10: var = MIDDLE
 	*: var = SMALL
 }
+number?{
+	1, 3, 5, 7,8, 10,12: days = 31;
+	4, 6, 9, 11: days=30;
+	2: days= ((year % 4 == 0) && ! (year % 100 ==0) || (year % 400 ==0)? 29: 28;
+	*: throw new IllegalArgument(Error month number $number)
+}
 number? {
 	1: var = ONE
 	2: var = TWO
@@ -151,8 +177,59 @@ visibility? {
 	INTERNAL: flag = 0x0010
 	PROTECTED: flag = 0x0100
 }
- @1..10? print(i);
+@1..10? i: print(i);
 @array? d: print(d*d);
 List<String> list = big, middle, small;
 array2 = @list? s, i: print(s+i); //print: big1 middle2 small3
+```
+
+###Control statement
+```java
+fallthrough/follow? //currently, it's not certain, feedback needed
+@LABEL: //label declaration, in conditional and loop expression and statement
+goto LABEL;
+//conditional 
+enumerable? {
+	@LABEL: value/values: statement/expression;
+}
+//Loop
+@LABEL: boolean expression? {
+}
+
+```
+example
+```java
+
+```
+###Exception handler statement
+```java
+statement ? Any Exception e: statement;
+statement ? Throwable/Exception/RuntimeException {
+	Exception1 e1: statement1;
+	Exception2 e2: statement2;
+}
+//try block, just use block
+{
+	statement
+	...
+}?Throwable/Exception/RuntimeException {
+	handler;
+	...
+}
+```
+example
+```java
+Thread((): @?: System.in.read()).start() ? IOException e: println(e.getMessage());
+x = System.in.read(): ? IOException: -1;
+x.getClass().getField("field")? Exception{
+	ReflectionException: println("Error reflection")
+	AccessException: println("Error Access")
+}
+{
+	method1();
+	method2();
+}? Exception{
+	IllegalArgument: println("error arguments")
+	RuntimeException: println("runtime error")
+}
 ```
