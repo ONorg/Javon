@@ -91,3 +91,14 @@ Function<Integer> f = x {
 }
 l= x: y: z: x+y+z;
 ```
+##Inner class
+```java
+class/interface/enum Name<T,...>: superClass, interface1, interface2... ;/{Members...}
+```
+example
+```java
+class Inner; //abstract class without the abstract flag
+class B<T>: Inner{
+  String name;
+ }
+```
