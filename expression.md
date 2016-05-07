@@ -58,6 +58,7 @@ number == 33 && string.charAt(0)==A || number>>3>=2
 expression#type //force type cast, higher priority
 expression?#type  //only if type matched do cast
 expression?.member //only if type NonNull do invocation
+var $ Type? var.member //smart convertion
 ```
 example
 ```java
@@ -69,6 +70,8 @@ Person p = y#Person;
 Person q = y?#Person; //if y is not an instance of Person, the q has no value.
 q = y?#Person; //ERROR, constant must have a value.
 String name = y?#Person.name?#String;
+Object s = "It's a string"
+int length = s $ String? s.length(); //smart convertion, there is no need to call s#String
 ```
 ###Conditional and Loop Expression
 ```java
@@ -195,11 +198,32 @@ enumerable? {
 //Loop
 @LABEL: boolean expression? {
 }
-
+return expression/statement; //void value is a valid case
+break; //break loop
+break LABEL; //break loop goto LABEL
+continue; //continue loop
+continue LABEL; //continue loop goto LABEL
+throw Exception;
 ```
 example
 ```java
-
+Visibility?{
+  PRIVATE: value = 1; fallthrough;
+  PROTECTED: println(No public)
+  PACKAGE: value = 2; goto DEFAULT;
+  PUBLIC: checkPublic()
+  @DEFAULT: *: println(Error case)
+}
+@LOOP: visibitity!=PUBLIC? {
+  visibility++;
+  visibility == INTERNAL? {visibility-=3; continue LOOP;}
+  @1..100? i {
+    i % 5 ==0? i % 10 == 0? continue LOOP: break LOOP;
+  }
+}
+void method(): voidMethod();
+void method(): return voidMethod();
+void method(): field $ String? voidMethod(field): voidMethod2(field);
 ```
 ###Exception handler statement
 ```java
