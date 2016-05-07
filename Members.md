@@ -11,7 +11,7 @@ example
 int count = 0;
 int count;
 count = 3; //type inference, int
-name = default valu; //type inference, string
+name = default value string; //type inference, string
 ```
 
 ##Property
