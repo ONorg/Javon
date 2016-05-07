@@ -233,3 +233,55 @@ x.getClass().getField("field")? Exception{
 	RuntimeException: println("runtime error")
 }
 ```
+###Builder pattern statement
+```java
+instance.{
+  method1(...)
+  method2(...)
+  ...
+}
+builder/Class{
+  name: value
+  name: value,
+  name: value1, value2
+  nest {
+    name: value;
+    name: value1, value2, ...
+    ...
+  }
+  ...
+}
+```
+example
+```java
+StringBuilder builder = StringBuile();
+builder.{
+  append("html{")
+  append("body{")
+  append("p: paragraph text as follows")
+  append("}}")
+}
+htmlBuilder{
+  html{
+    body{
+      p: paragraph text as follows
+      a{href: target/linka; here text just is}
+    }
+  }
+}
+Person{
+  name: zhangsan
+  age: 33
+  location: CQ
+  favorite: what?
+}
+UIBuilder{
+ width: 30
+ height: 30
+ color: r, g, b
+ margin: 10
+ border: 2
+ padding: 1, 0, 0, 1
+ flow: true
+}
+```
