@@ -50,7 +50,7 @@ alias{
 ```java
 @annotation... flags class/interface/enum/@interface Name<T1, T2...>: SuperClass, Interface1, Interface2 ;/{
 }
-
+```
 Example.javon
 ```java
 package com.xyz.example;
