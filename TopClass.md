@@ -67,7 +67,9 @@ alias{
   string: @NonNull String
   cstring: Comparable<string>
 }
-class AbstractExample;
-class Example<T, V>: AbstractExample, Charsequence, cstring{
+
+internal class AbstractExample; //abstract super class, because there are only one public class in a file
+
+class Example<T, V>: AbstractExample, Charsequence, cstring{ 
 }
 ```
