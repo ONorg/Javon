@@ -37,6 +37,10 @@ type #name {
 }
 #name {...} //same as above, type inference
 //TODO: consider syntax for mixed field and property, type field, #property;
+//@Property annotation, "declaration by exception" usage
+@Property(Bean) //default, currently, JavaBean name convention pattern, setXXX(value) getXXX()
+@Property(Att) //preferable pattern, name(value), name()
+@Property(Bean, Att)//more code or delegate
 ```
 example
 ```java
@@ -44,11 +48,11 @@ int count;
 boolean overflow;
 int #level; //create an inner field named as level
 int #x, #y;
-#amount: @count;
+@Property(Bean, Att) #amount: @count;
 #amount: @count{
 	set: value>100? overflow=true; count =value % 100;
 }
-#amount {
+@Property(Att) #amount {
 	get: overflow? count+100: count;
 	set: value>100? overflow=true; count =value % 100;
 }
