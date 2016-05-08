@@ -45,7 +45,7 @@ int first=22; //var
 "mixed string is NO_22_333"
 ```
 ###Evaluation Expression
-operators: (expression.md)
+operators: [see operator prececence](Operators.md)
 ++ -- + - ! ~ * / % >> << >>> < <= > >= == != & ^ | && || 
 ```java
 number+3-100 * 9 /20 
