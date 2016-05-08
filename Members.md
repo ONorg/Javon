@@ -24,9 +24,9 @@ type #name //will create inner field
 type #name1 #name2, ...; 
 type #name: @field; //just wrap the given field, create no inner field
 #name: @field; //same as above, type inference
-type #name: @field1: @field2; //read field different from set field
+type #name: @field1 @field2; //read field different from set field
 #name: @field1: @field2; //same as above, type inference
-type #name: @field {
+type #name: @field [@field2] { // add invariats
   before: statement; //full method is beforeSetXXX(value)
   after: statement; //full method is afterSetXXX(value)
   set: statement; //full method is setXXX(value)
