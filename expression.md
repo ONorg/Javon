@@ -309,3 +309,8 @@ UIBuilder{
  flow: true
 }
 ```
+###lambda statement
+same as it is in class member scope
+```java
+name=arg1, arg2, arg3: expression/statement/block;
+```
