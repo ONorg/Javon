@@ -85,7 +85,7 @@ int getSetting(String key, int default=3){
 }
 ```
 ##Lambda field
-almost like method declaration, except the args declared without parentheses surrounded
+almost like method declaration, except the args declared without parentheses surrounded, and there is no named arguments and default argument value.
 ```java
 name = type1 arg1, type2 arg2, type2 arg3: expression/statement/block; //type can be ignore
 name = (): expression/statement/block; //special case for noargs
