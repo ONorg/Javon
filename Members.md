@@ -7,6 +7,7 @@ type name;
 type name1, name2...;
 name = expression; //type inference
 //TODO: consider syntax for multiple fields, name1=name2=...=expression;
+//TODO: tuple field
 ```
 example
 ```java
