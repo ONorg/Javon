@@ -4,7 +4,7 @@
 ```java
 type name = expression;
 type name;
-type name1, name2...;
+type name1 name2...; //If there are some addtional annotations for each field, just split this to multiple lines.
 name = expression; //type inference
 //TODO: consider syntax for multiple fields, name1=name2=...=expression;
 //TODO: tuple field
@@ -13,7 +13,7 @@ example
 ```java
 int count = 0;
 int count;
-int a, b, c;
+int a b c;
 count = 3; //type inference, int
 name = default value string; //type inference, string
 ```
@@ -21,7 +21,7 @@ name = default value string; //type inference, string
 ##Property
 ```java
 type #name //will create inner field
-type #name1, #name2, ...; 
+type #name1 #name2, ...; 
 type #name: @field; //just wrap the given field, create no inner field
 #name: @field; //same as above, type inference
 type #name: @field1: @field2; //read field different from set field
@@ -48,7 +48,7 @@ example
 int count;
 boolean overflow;
 int #level; //create an inner field named as level
-int #x, #y;
+int #x #y;
 @Property(Bean, Att) #amount: @count;
 #amount: @count{
 	set: value>100? overflow=true; count =value % 100;
@@ -122,7 +122,7 @@ class B<T>: Inner{
 class Name..{
   Type1 field1;
   Type2 field2;
-  @init: field1, field2; //there is no need to duplicate field assignment statement
+  @init field1 field2; //there is no need to duplicate field assignment statement
   
   init(args...){
     @init: value1, value2...;
@@ -134,7 +134,7 @@ example
 class Example{
   String name;
   int count;
-  @init: name, count;
+  @init name count;
   
   init(String name, int a, b, c){
     @init: name, a+b/c;
