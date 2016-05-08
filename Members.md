@@ -145,3 +145,18 @@ class Example{
   
 }
 ```
+## Property in interface
+```java
+@ReadOnly interface Super {
+  type name; 
+  @ReadWrite
+  type other;
+  type exceptProperty;
+}
+
+@Writable(except: exceptProperty)
+interface Sub: Super{
+  type name;
+  type other;
+}
+```
