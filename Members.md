@@ -85,9 +85,10 @@ int getSetting(String key, int default=3){
 }
 ```
 ##Lambda field
+almost like method declaration, except the args declared without parentheses surrounded
 ```java
-name = arg1, arg2, arg3: expression/statement/block;
-name = (): expression/statement/block;
+name = type1 arg1, type2 arg2, type2 arg3: expression/statement/block; //type can be ignore
+name = (): expression/statement/block; //special case for noargs
 FunctionalInterfaceType name = arg1, arg2, arg3: expression/statement/block;
 FunctionalInterfaceType name = (): expression/statement/block;
 nest = args,...: args, ...: expression/statement/block;
