@@ -30,10 +30,12 @@ type #name: @field {
   after: statement; //full method is afterSetXXX(value)
   set: statement; //full method is setXXX(value)
 }
+#name: @field {...} //same as above, type inference
 type #name {
   get: expression;
   set: statement;
 }
+#name {...} //same as above, type inference
 //TODO: consider syntax for mixed field and property, type field, #property;
 ```
 example
