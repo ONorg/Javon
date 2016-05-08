@@ -4,12 +4,15 @@
 ```java
 type name = expression;
 type name;
+type name1, name2...;
 name = expression; //type inference
+//TODO: consider syntax for multiple fields, name1=name2=...=expression;
 ```
 example
 ```java
 int count = 0;
 int count;
+int a, b, c;
 count = 3; //type inference, int
 name = default value string; //type inference, string
 ```
@@ -17,6 +20,7 @@ name = default value string; //type inference, string
 ##Property
 ```java
 type #name //will create inner field
+type #name1, #name2, ...; 
 type #name: @field; //just wrap the given field, create no inner field
 #name: @field; //same as above, type inference
 type #name: @field1: @field2; //read field different from set field
@@ -30,12 +34,14 @@ type #name {
   get: expression;
   set: statement;
 }
+//TODO: consider syntax for mixed field and property, type field, #property;
 ```
 example
 ```java
 int count;
 boolean overflow;
 int #level; //create an inner field named as level
+int #x, #y;
 #amount: @count;
 #amount: @count{
 	set: value>100? overflow=true; count =value % 100;
@@ -78,6 +84,7 @@ name = (): expression/statement/block;
 FunctionalInterfaceType name = arg1, arg2, arg3: expression/statement/block;
 FunctionalInterfaceType name = (): expression/statement/block;
 nest = args,...: args, ...: expression/statement/block;
+//TODO: consider pure function syntax int(int) f = x: x+3;
 ```
 example
 ```java
