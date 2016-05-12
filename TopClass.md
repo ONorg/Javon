@@ -48,7 +48,7 @@ alias{
 ```
 ## Class
 ```java
-@annotation... flags class/interface/enum/@interface Name<T1, T2...>: SuperClass, Interface1, Interface2 ;/{
+@annotation... flags class/interface/enum/@interface Name<T1, T2...>: SuperClass Interface1 Interface2 ;/{
 }
 ```
 Example.javon
@@ -70,6 +70,6 @@ alias{
 
 internal class AbstractExample; //abstract super class, because there are only one public class in a file
 
-class Example<T, V>: AbstractExample, Charsequence, cstring{ 
+class Example<T, V>: AbstractExample Charsequence cstring{ 
 }
 ```
