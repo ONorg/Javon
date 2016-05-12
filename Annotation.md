@@ -20,9 +20,13 @@ There is only a D1 array in Annotations, the brace pair surrounding is not neces
 To use single value form, Java Annotation restrict developers to declare the "value" as name of a field. Javon does not.
 Javon understand the single value to correspond to the unique required field.
 Note that it cannot end with semicolon.
+
+Note that single string which starts with @ will be taken as a simple annotation
 ```java
 @Ann(value)
 @Ann(v1, v2, v3)
+@Ann(@B) //same as the follow
+@Ann(@B())
 ```
 ###Multiple Annotations
 This form simplify declaration for custom array structure. Javon Ignore the duplicated names.
