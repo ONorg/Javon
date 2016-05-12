@@ -19,6 +19,7 @@ There is only a D1 array in Annotations, the brace pair surrounding is not neces
 ###Single implicit value
 To use single value form, Java Annotation restrict developers to declare the "value" as name of a field. Javon does not.
 Javon understand the single value to correspond to the unique required field.
+Note that it cannot end with semicolon.
 ```java
 @Ann(value)
 @Ann(v1, v2, v3)
@@ -29,6 +30,7 @@ This form simplify declaration for custom array structure. Javon Ignore the dupl
 @Ann(value1)(value2)(value3)
 ```
 ###Nested Annotations
+Note that if @string form string occurs in value pair, it is allowed, but will not be processed as annotaton, it's just a normal string. Because @Annotation can only follow ( symbol.
 ```java
 @A(@B)
 @A(@Ann(value1)(value2)(value3))
