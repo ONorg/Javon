@@ -33,6 +33,22 @@ this is a string //string, the space allowed, the quote chars is not necessay,
 the newline chars is allowed'
 String.valueOf(333) //method invocation
 ```
+### Method invocation
+```java
+method(arg1, arg2...) //normal cases
+method(args; e1, e2, e3...; ...) //direct array literal
+method(arg1, arg2,  name: expression) //with named arguments which must be at the end of parameters
+method(args; arg1, arg2: args...: expression); //lambdas
+method(arg1; args...: ...args: lambda expression; name: expression);//with lambdas and named arguments
+```
+example
+```java
+m(1, string) //normal case
+m(1, 2, 3; abc, def; 5) //array
+m(string; x:y:z: x+y+z; true) //lambdas
+m(hello, name: 3; times: 10) //named arguments
+m(hello; x:y:z: x+y+z; name: 3; times: 10) //lambdas and named arguments
+```
 ### String template
 ```java
 int number=333; //var
