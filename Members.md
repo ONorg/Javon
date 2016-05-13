@@ -63,6 +63,7 @@ int #x #y;
 ```
 
 ##Method
+NOTE: current both = and : allowed for named argument default value.
 ```java
 type method(type arg, ...); //sanity abstract method, and there is no need to employ the keyworld "abstract".
 type method(type arg, ...): expression or single statement; //fast way or shorthand
