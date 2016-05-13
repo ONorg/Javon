@@ -90,6 +90,12 @@ int getSetting(String key, int default=3){
 	value==null? default: value#int; //the return can be ignored
 }
 ```
+NOTE: JLS varargs syntax is simple rough, indeed, the key point is that its source is the lack of the invocation syntax's diversity.
+In Javon all is simple perfect:-) The solution is like the following
+```java
+method(int[] numbers, string[] strings);
+method(1, 2, 3; abc, def)
+```
 ##Lambda field
 almost like method declaration, except the args declared without parentheses surrounded, and there is no named arguments and default argument value.
 ```java
