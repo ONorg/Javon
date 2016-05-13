@@ -72,8 +72,7 @@ type method(type arg, ...) {
 	expression/statement;
 }
 type method(type arg= default value, ...); //named argument
-type method(int a, b, c, string name=Adele); //same type can be ignored, this time, it's int for both a, b and c parameter.
-type method(int a b, c, string name); //same type can be separatd by space
+type method(int a b c, string name=Adele); //same type can be ignored, this time, it's int for both a, b and c parameter.
 type method(int length, int ...args);  //varargs, Variable Argument, same as Java
 type method(int length, int ...a b args); //enhanced varargs, by name reference
 type method(String name, int[] numbers = 1, 2, 3; String priority = 3, int times = 50); //can define array value as default value
@@ -81,7 +80,7 @@ type method(String name, int[] numbers = 1, 2, 3; String priority = 3, int times
 example
 ```java
 int parse();
-int sum(int a, b, c){
+int sum(int a b c){
 	checkRange(a, b);
 	return a+b+c;
 }
@@ -142,10 +141,10 @@ class Example{
   int count;
   @init name count;
   
-  init(String name, int a, b, c){
+  init(String name, int a b c){
     @init: name, a+b/c;
   }
-  init(String name1, String name2, int a, b, c){
+  init(String name1, String name2, int a b c){
     @init: name1+name2, a+b/c;
   }
   
