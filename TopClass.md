@@ -62,10 +62,10 @@ import {
 	
 }
 alias{
-  T: Function<Integer> & Charsequence
+  T: Function[Integer] & Charsequence
   V: Number
   string: @NonNull String
-  cstring: Comparable<string>
+  cstring: Comparable]string]
 }
 
 internal class AbstractExample; //abstract super class, because there are only one public class in a file
