@@ -30,17 +30,17 @@ import {
 [see alias](alias.md)
 ```java
 alias{
-  TypeName: Type1 & Type2 & GenericType<TypeParameter> & @annotation Type
+  TypeName: Type1 & Type2 & GenericType[TypeParameter] & @annotation Type
   ...
 }
 ```
 example
 ```java
 alias{
-	T: Runnable & Function<Integer>
-	V: List<Map<T, String>>
-	Tag: Element<String>
-	Strings: List<String>
+	T: Runnable & Function[Integer]
+	V: List[Map[T, String]]
+	Tag: Element[String]
+	Strings: List[String]
 	NNString: @NonNull String
 	intfunction: int(string, int)
 	string: String
@@ -48,7 +48,7 @@ alias{
 ```
 ## Class
 ```java
-@annotation... flags class/interface/enum/@interface Name<T1, T2...>: SuperClass Interface1 Interface2 ;/{
+@annotation... flags class/interface/enum/@interface Name[T1, T2...]: SuperClass Interface1 Interface2 ;/{
 }
 ```
 Example.javon
@@ -70,6 +70,6 @@ alias{
 
 internal class AbstractExample; //abstract super class, because there are only one public class in a file
 
-class Example<T, V>: AbstractExample Charsequence cstring{ 
+class Example[T, V]: AbstractExample Charsequence cstring{ 
 }
 ```
