@@ -45,18 +45,18 @@ import {
 	pack.age.Class alias, Class2 alias2;
 }
 alias{
-	T: Runnable & Function<String>;
-	V: List<Map<T, String>>;
-	Person: Person<String>;
-	Tag: Element<String>;
-	StringList: List<String>;
+	T: Runnable & Function[String];
+	V: List[Map[T, String]];
+	Person: Person[String];
+	Tag: Element[String];
+	StringList: List[String];
 	string: @Nonull String;
-	intfunc: Function<int>;
+	intfunc: Function[int];
 	intf1: int (string, int);
 }
 @A @B @C(1)(2)(3)
 @Property(Bean, Att)
-class Name<T, V>: Class, Interface1, StringList{
+class Name[T, V]: Class, Interface1, StringList{
 	static max = 9999 9999 8765 4321;
 	string field1;
 	field2 = 0x1234 5678;
