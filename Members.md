@@ -70,7 +70,10 @@ type method(type arg, ...) {
 }
 type method(type arg= default value, ...); //named argument
 type method(int a, b, c, string name=Adele); //same type can be ignored, this time, it's int for both a, b and c parameter.
+type method(int a b, c, string name); //same type can be separatd by space
 type method(int length, int ...args);  //varargs, Variable Argument, same as Java
+type method(int length, int ...a b args); //enhanced varargs, by name reference
+type method(String name, int[] numbers = 1, 2, 3; String priority = 3, int times = 50); //can define array value as default value
 ```
 example
 ```java
