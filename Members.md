@@ -4,7 +4,7 @@
 ```java
 type name = expression;
 type name;
-type name1 name2...; //If there are some addtional annotations for each field, just split this to multiple lines.
+type name1 name2...; //If there are some additional annotations or flags for each field, just split this to multiple lines.
 name = expression; //type inference
 //TODO: consider syntax for multiple fields, name1=name2=...=expression;
 //TODO: tuple field
@@ -13,7 +13,10 @@ example
 ```java
 int count = 0;
 int count;
-int a b c;
+int a b c; //if there are additional annotations, change to the following syntax
+@Validate(10) int a;
+@Validate(11) int b;
+@Validate(12) int c;
 count = 3; //type inference, int
 name = default value string; //type inference, string
 ```
