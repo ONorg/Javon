@@ -110,9 +110,9 @@ nest = args,...: args, ...: expression/statement/block;
 example
 ```java
 Runnable r = (): doSomething();
-Function<Integer> f = x: x+3;
-BiFunction<Integer,Integer> f = x,y: x+y^2;
-Function<Integer> f = x {
+Function[Integer] f = x: x+3;
+BiFunction[Integer,Integer] f = x,y: x+y^2;
+Function[Integer] f = x {
 	check(x);
 	convert(x);
 	return x+3;
@@ -121,12 +121,12 @@ l= x: y: z: x+y+z;
 ```
 ##Inner class
 ```java
-class/interface/enum Name<T,...>: superClass, interface1, interface2... ;/{Members...}
+class/interface/enum Name[T,...]: superClass, interface1, interface2... ;/{Members...}
 ```
 example
 ```java
 class Inner; //abstract class without the abstract flag
-class B<T>: Inner{
+class B[T]: Inner{
   String name;
  }
 ```
