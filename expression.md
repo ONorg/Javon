@@ -243,34 +243,34 @@ void method(): field $ String? voidMethod(field): voidMethod2(field);
 ```
 ###Exception handler statement
 ```java
-statement ? Any Exception e: statement;
-statement ? Throwable/Exception/RuntimeException {
-	Exception1 e1: statement1;
-	Exception2 e2: statement2;
+statement :? Any Exception e: statement;
+statement :? {
+	Exception1 e1: statement1; //handler
+	Exception2 e2: statement2; //handler
 }
 //try block, just use block
 {
 	statement
 	...
-}?Throwable/Exception/RuntimeException {
-	handler;
-	...
+}:? {
+  handler;
+  ...
 }
 ```
 example
 ```java
-Thread((): @?: System.in.read()).start() ? IOException e: println(e.getMessage());
-x = System.in.read(): ? IOException: -1;
-x.getClass().getField("field")? Exception{
-	ReflectionException: println("Error reflection")
-	AccessException: println("Error Access")
+Thread((): @?: System.in.read()).start() :? IOException e: println(e.getMessage());
+x = System.in.read() :? IOException: -1;
+x.getClass().getField("field"):? {
+  ReflectionException: println("Error reflection")
+  AccessException: println("Error Access")
 }
 {
-	method1();
-	method2();
-}? Exception{
-	IllegalArgument: println("error arguments")
-	RuntimeException: println("runtime error")
+  method1(); //maybe throw
+  method2(); //maybe throw
+}:? Exception{
+  IllegalArgument: println("error arguments")
+  RuntimeException: println("runtime error")
 }
 ```
 ###Builder pattern statement
