@@ -23,21 +23,19 @@ name = default value string; //type inference, string
 
 ##Property
 ```java
-type #name //will create inner field
+type #name //will create private inner field, which name pattern is name_field
 type #name1 #name2, ...; 
 type #name: @field; //just wrap the given field, create no inner field
 #name: @field; //same as above, type inference
 type #name: @field1 @field2; //read field different from set field
 #name: @field1: @field2; //same as above, type inference
-type #name: @field [@field2] { // add invariats
-  before: statement; //full method is beforeSetXXX(value)
-  after: statement; //full method is afterSetXXX(value)
-  set: statement; //full method is setXXX(value)
-}
-#name: @field {...} //same as above, type inference
-type #name {
+type #name(): expression; //read only form
+type #name(arg): statement; //write only form
+type #name: { // add invariats, at least one form, readOnly or writeOnly or readAndWrite
   get: expression;
-  set: statement;
+  before: statement; //full method is beforeSetXXX(value) can be ignore
+  after: statement; //full method is afterSetXXX(value) can be ignore
+  set: statement; //full method is setXXX(value)
 }
 #name {...} //same as above, type inference
 //TODO: consider syntax for mixed field and property, type field, #property;
@@ -53,12 +51,13 @@ boolean overflow;
 int #level; //create an inner field named as level
 int #x #y;
 @Property(Bean, Att) #amount: @count;
-#amount: @count{
-	set: value>100? overflow=true; count =value % 100;
+#amount {
+  get: count;
+  set: value>100? overflow=true; count =value % 100;
 }
 @Property(Att) #amount {
-	get: overflow? count+100: count;
-	set: value>100? overflow=true; count =value % 100;
+  get: overflow? count+100: count;
+  set: value>100? overflow=true; count =value % 100;
 }
 ```
 
