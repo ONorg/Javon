@@ -34,6 +34,7 @@ alias{
   ...
 }
 ```
+TODO: consider removing the colon symbol after the type variable or alias, or that both forms can be accepted. it seems to able to increase the rate of typing or reading without lowering comprehension.
 example
 ```java
 alias{
