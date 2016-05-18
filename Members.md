@@ -28,7 +28,7 @@ type #name1 #name2, ...;
 type #name: @field; //just wrap the given field, create no inner field
 #name: @field; //same as above, type inference
 type #name: @field1 @field2; //read field different from set field
-#name: @field1: @field2; //same as above, type inference
+#name: @field1 @field2; //same as above, type inference
 type #name(): expression; //read only form
 type #name(arg): statement; //write only form
 type #name: { // add invariats, at least one form, readOnly or writeOnly or readAndWrite
