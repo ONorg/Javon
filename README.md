@@ -156,7 +156,7 @@ class Name[T, V]: Class, Interface1, StringList{
 		method1(lisi, f2);
 		method2("wangwu", f2);
 		
-		int a, b, c;
+		int a b c;
 		long x = 10000L<<32;
 		a = x#int + 32;
 		ubyte b1, b2, b3, b4;
@@ -260,7 +260,7 @@ class Name[T, V]: Class, Interface1, StringList{
 		string = string template contains $count references;
 		s2 = string tempalte refers ${count}_s variable;
 		
-		t1 (int a, int b) = 2, 3;
+		(int a, int b) t1= 2, 3;
 		t2 = swap(t1);
 		(a, b) = swap(t2);
 		assert a==2 && b ==3;
