@@ -90,6 +90,8 @@ Object s = "It's a string"
 int length = s $ String? s.length(); //smart convertion, there is no need to call s#String
 ```
 ###Conditional and Loop Expression
+Javon use @ ? ?! !? combinations as judgement operators instead of if, switch, for and while keyword for conditional and loop expression.
+NOTE that the expression means that it can be the right value of assignment statement. Yes, even loop. A loop with multiple values can be used as a generator.
 ```java
 boolean expression? exp1: exp2
 b1? exp1: b2? exp2: exp3 //the ternary expression can be nested
