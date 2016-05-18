@@ -5,7 +5,7 @@
 type var = expression;
 var = expression; //type inference
 (a, b) = value1, value2; //tuple
-t (int a, int b);
+(int a, string b) tuple; 
 ```
 example
 ```java
