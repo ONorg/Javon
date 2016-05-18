@@ -64,17 +64,19 @@ class Name[T, V]: Class, Interface1, StringList{
 	field4 = System.nanoTime() % 2 == 0? 3: 2;
 
 	
-	int #prop;
+	int #prop; // x = object.prop; object.prop = 2;
 	@Property(Att)
 	#prop1: @field2;
-	#prop1: @field2: @field2;
-	#prop2: @field2 {
+	#prop2: @field2: @field2;
+	#prop2: {
 		before: must(value>2);
 		after: must(value>2);
 		set: field3=value+222;
 	}
-	#prop2{
-		get: field3+222;
+	#prop2(): field2+method1(); //readonly
+	#prop3(value): field2 = value? 1: 2; //writeonly
+	#prop4(value): { //writeonly
+		before: must(value>2)
 		set: field3+value;
 	}
 	
@@ -94,8 +96,9 @@ class Name[T, V]: Class, Interface1, StringList{
 	class Person{
 		Object name;
 		String field1, field2;
-		#prop1: @name {
-			value.startsWith("BG")? field2=value: field2= value;
+		#prop1: {
+		  get: name;
+		  set: value.startsWith("BG")? field2=value: field2= value;
 		}
 	}
 	class Student: Person{
@@ -113,9 +116,9 @@ class Name[T, V]: Class, Interface1, StringList{
 		println(field4)
 	}
 	
-	field5 = Person(name){}
-	field6 = Task.init(source, target);
-	field7 = Task();
+	field5 = Person(name){} //anonymus inner class
+	field6 = Task.init(source, target); //object initialization
+	field7 = Task(); //method invocation has a higher precedence than Class initialization short-hand form
 	
 	static{
 		max+=2222;
@@ -237,19 +240,19 @@ class Name[T, V]: Class, Interface1, StringList{
 			padding: 1, 0, 0, 1;
 			flow: true
 		}
-		try( x=new FileInputStream("test.file")): c = x.read();
+		try( x=new FileInputStream("test.file")):? c = x.read();
 
 		Thread((): method2(zhangsan, f2)).start(): RuntimeException ex: throw StacklessException(ex);
-		value = Class.getField("field").get(instance)? throw {
+		value = Class.getField("field").get(instance) :? {
 			InvocatinTargetException: e.printStack();
 			ReflectionException: throw StacklessException(e);
 		}
 		
 		int c;
 		stream  x;
-		c = stream.read(): RuntimeException: throw IllegalArgumentException(e);
+		c = stream.read():? RuntimeException e: throw IllegalArgumentException(e);
 		
-		scope(failure) clear();
+		scope(failure) clear(); //D-lang style
 		scope(exit) finallyClear();
 		@1..100? count+=stream.read();
 		
