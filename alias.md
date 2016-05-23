@@ -30,9 +30,13 @@ Indeed, the & symbol is not so neccessary, consider the following syntax
 T: Runnable Function[Integer]
 E: INTF Type[T V, S, W X[A, B] Y]
 ```
-Note that annotations can precede any type.
+Note that annotations can precede any type, even a type parameter of a parameterized type and array symbol
 ```java
 E: INTF @A Type[@B(1) T @B(2) V, S, W @C(1, 2) X[A, B] Y]
+@A E: INTF & Others
+class Name[@A T]{}
+MyArray: @A int @B[] @C[] //but this form consider the follow form
+MyArray: @A int [@B] [@C]
 ```
 ##About wildcards in Java
 JLS provides a syntax for in and out generics because JVM generics defect, ? super T, ? extends T. This form just take onshot semantics, and then it is no any difference from normal Container<T>. So it should be viewed as an invalidity, someone knows which is very prevalent in C++ design philosophy.
