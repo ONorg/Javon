@@ -21,9 +21,8 @@ V: List[Map[T, String]]
 Tag: Element[String]
 Strings: List[String]
 NNString: @NonNull String
-intfunction: int(string, int)
 string: String
-E: INTF & Type[T & V, S, W & X[A, B] & Y]
+E: INTF & Type[@A T & @B V, S, W & X[A, B] & Y]
 ```
 Indeed, the & symbol is not so neccessary, consider the following syntax
 ```java
@@ -37,6 +36,10 @@ E: INTF @A Type[@B(1) T @B(2) V, S, W @C(1, 2) X[A, B] Y]
 class Name[@A T]{}
 MyArray: @A int @B[] @C[] //but this form consider the follow form
 MyArray: @A int [@B] [@C]
+```
+TODO: consider function alias in future
+```java
+intfunction: int(string, int)
 ```
 ##About wildcards in Java
 JLS provides a syntax for in and out generics because JVM generics defect, ? super T, ? extends T. This form just take onshot semantics, and then it is no any difference from normal Container<T>. So it should be viewed as an invalidity, someone knows which is very prevalent in C++ design philosophy.
